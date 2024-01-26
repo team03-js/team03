@@ -72,7 +72,6 @@ fetch("https://jsonplaceholder.typicode.com/todos")
     });
 */
 
-/*
 fetch("https://jsonplaceholder.typicode.com/posts/1")
     .then((response) => response.json())
     .then((titles) => {
@@ -86,13 +85,11 @@ fetch("https://jsonplaceholder.typicode.com/posts/1/comments")
         console.log(titles);
     });
 
-
 fetch("https://jsonplaceholder.typicode.com/comments?postId=1")
     .then((response) => response.json())
     .then((titles) => {
         console.log(titles);
     });
-*/
 
 fetch("https://jsonplaceholder.typicode.com/comments?postId=1")
     .then((response) => response.json())
