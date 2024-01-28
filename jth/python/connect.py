@@ -14,7 +14,7 @@ if __name__ == '__main__':
     find_by_id_query = "select userId, title, body from post where userId = %s"
     find_by_id_params = 1,
     search = find_by_id(find_by_id_query, find_by_id_params)
-    # print(search)
+    print(search)
 
     delete_query = "delete from post where userId = %s"
     delete_params = 1,
