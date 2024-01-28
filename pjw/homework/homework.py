@@ -1,5 +1,4 @@
 from crud_module import *
-from posts import Posts
 
 # posts 내용 추가
 # save_many_query = "insert into tbl_posts(userId, title, body) \
@@ -18,419 +17,55 @@ from posts import Posts
 # post = find_all(find_all_query)
 # print(post)
 class Post:
+    def __init__(self,userId,id,title,body):
+        self.userId = userId
+        self.id = id
+        self.title = title
+        self.body = body
+
     def list_view():
-        find_all_query = "select userId, id, title, body from tbl_posts"
+        find_all_query = "select userId, id, title, body from tbl_posts "
         views = find_all(find_all_query)
-        all_list = []
         for view in views:
-            all_list.append(view.get("userId"), view.get("title"), view.get("body"))
-            print(all_list, end="\n")
+            # print(view)
+            view_list = view.get('userId'), view.get('title'), view.get('body')
+            print(view_list)
+    # Post.list_view()
+
+    def title_view(title_id):
+        find_all_by_query = "select userId, title, body, id from tbl_posts where userId = %s"
+        find_all_by_params = title_id
+        members = find_all_by(find_all_by_query, find_all_by_params)
+        for member in members:
+            select_list = member.get('userId'), member.get('title')
+            print(select_list)
+
+    def delete_view(user_id):
+        delete_query = "delete from tbl_posts where id = %s"
+        delete_params = user_id
+        delete(delete_query, delete_params)
 
 
-menu_message = '원하는 번호를 입력하세요. \n 1. 전체 조회하기 \n 2. title 목록 조회하기 \n 3. 삭제하기'
+menu_message = '원하는 번호를 입력하세요. \n 1. 전체 조회하기 \n 2. title 목록 조회하기 \n 3. 삭제하기 \n'
 title_message = '조회하실 userId를 입력하세요: '
-del_message = '삭제하실 id를 입력하세요: '
+del_message = '삭제하실 글 번호를 입력하세요: '
+
 if __name__ == '__main__':
-    menu = int(input(menu_message))
     while True:
+        menu = int(input(menu_message))
         # 전체 목록 조회
-        if choose == 1:
+        if menu == 1:
             Post.list_view()
+            continue
+
         # userId로 title 조회
-        if choose == 2:
-            id = input(int(title_message))
-        # id로 정보 삭제하기
-        if choose == 3:
-            id = input(int(del_message))
-            break
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        elif menu == 2:
+            title_id = int(input(title_message))
+            Post.title_view(title_id)
+            continue
+
+        # # id로 정보 삭제하기
+        elif menu == 3:
+            user_id = int(input(del_message))
+            Post.delete_view(user_id)
+            continue

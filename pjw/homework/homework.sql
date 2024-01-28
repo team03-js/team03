@@ -38,6 +38,7 @@ create table tbl_posts(
 # );
 
 select * from tbl_posts;
+
 # select * from tbl_comments;
 # select * from tbl_albums;
 # select * from tbl_photos;
