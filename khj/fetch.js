@@ -13,12 +13,16 @@
 //     console.log(zipcode);
 // }
 
-// 6개 추출하기
-// post에서 body 추출
-fetch("https://jsonplaceholder.typicode.com/posts")
-    .then((response) => response.json())
-    .then((posts) => {
-        posts.forEach((post) => {
-            console.log(post.title);
-        });
-    });
+// post에서 title 추출
+// fetch("https://jsonplaceholder.typicode.com/posts")
+//     .then((response) => response.json())
+//     .then((posts) => {
+//         posts.forEach((post) => {
+//             const { title } = post;
+//             extract(title);
+//         });
+//     });
+
+// function extract(title) {
+//     console.log(title);
+// }

@@ -16,7 +16,7 @@ if __name__ == '__main__':
         ("Chelsey Dietrich", "Kamren", "Lucio_Hettinger@annie.ca", "(254)954-1289",  "demarco.info"),
     )
 
-    save_many(save_many_query, save_many_params)
+    # save_many(save_many_query, save_many_params)
 
     find_by_id_query = "select id from tbl_users where id = %s"
     find_by_id_params = 5,
@@ -34,7 +34,7 @@ if __name__ == '__main__':
         ("Skiles Walks", "Suite 351", "Roscoeview", "33263", users_id),
     )
 
-    save_many(save_many_query, save_many_params)
+    # save_many(save_many_query, save_many_params)
 
 
     find_by_id_query = "select id from tbl_address where id = %s"
@@ -51,7 +51,7 @@ if __name__ == '__main__':
         # (29.4572, -164.2990, address_id ),
         (-31.8129, 62.5342, address_id ),
     )
-    save_many(save_many_query, save_many_params)
+    # save_many(save_many_query, save_many_params)
 
     find_by_id_query = "select id from tbl_users where id = %s"
     find_by_id_params = 5,
@@ -67,4 +67,4 @@ if __name__ == '__main__':
         # ("Patricia Lebsack", "Multi-tiered zero tolerance productivity","transition cutting-edge web services", users_id),
         ("Chelsey Dietrich", "User-centric fault-tolerant solution","revolutionize end-to-end systems", users_id),
     )
-    save_many(save_many_query, save_many_params)
+    # save_many(save_many_query, save_many_params)
