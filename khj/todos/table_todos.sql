@@ -1,15 +1,6 @@
-use test;
 create database test;
+use test;
 
-/*
-album
-------------
-id(pk)
-------------
-user id (nn)
-title (nn)
-completd (nn)
-*/
 create table tbl_todos(
     id bigint auto_increment primary key,
     userId int not null,
