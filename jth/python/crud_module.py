@@ -1,6 +1,5 @@
 from connection_module import *
 
-
 @execute
 def save(cursor: Cursor, query: str, params: tuple):
     cursor.execute(query, params)

@@ -10,4 +10,4 @@ create table post(
 
 select * from post;
 
-delete from post where userId = 1000;
+# delete from post where userId = 1000;

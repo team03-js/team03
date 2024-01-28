@@ -80,18 +80,13 @@ class Db:
 class Member(Db):
     pass
 
-# Db.save_info(userId=1000, title="test", body="test")
 
 choose_message = '번호 입력: '
 user_message = "userId: "
 input_message = "title과 body를 입력하세요: "
 delete_message = "id: "
-# '''
+
 if __name__ == '__main__':
-    # save_query = "insert into post(userId, title, body) values(%s, %s, %s)"
-    # for number in range(len(datas)):
-    #     save_params = (datas[number]['userId'], datas[number]['title'], datas[number]['body'])
-    #     # save(save_query, save_params)
     while True:
         choose = int(input(choose_message))
         if choose == 1:
