@@ -24,6 +24,11 @@ def find_by_id(cursor: Cursor, query: str, params: tuple) -> dict:
 
 
 @execute
+def find_all_by(cursor: Cursor, query: str, params: tuple) -> list:
+    cursor.execute(query, params)
+    return cursor.fetchall()
+
+@execute
 def update(cursor: Cursor, query: str, params: tuple):
     cursor.execute(query, params)
 
