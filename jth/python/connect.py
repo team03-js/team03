@@ -120,4 +120,3 @@ if __name__ == '__main__':
                 Db.delete_info(check)
         if choose == 5:
             break
-# '''
