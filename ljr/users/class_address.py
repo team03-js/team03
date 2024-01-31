@@ -1,10 +1,10 @@
 from ljr.users.class_geo import Geo
 
 class Address:
-    def __init__(self, userId, street, suite, city, zipcode, geo):
-        self.userId = userId
-        self.street = street
-        self.suite = suite
-        self.city = city
-        self.zipcode = zipcode
-        self.geo = Geo(**geo)
+    def __init__(self,**kwargs):
+        self.id = kwargs.get('id')
+        self.street = kwargs.get('street')
+        self.suite = kwargs.get('suite')
+        self.city = kwargs.get('city')
+        self.zipcode = kwargs.get('zipcode')
+        self.geo = kwargs.get('geo')
